@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../.gradle/caches/transforms-3/46711a511d3e1cd7acb3e23e0cab2c15/transformed/material-1.4.0/res/layout/text_view_with_line_height_from_style.xml" value="0.2520833333333333" />
+        <entry key="app/src/main/res/layout/activity_item_todo_element_domain.xml" value="0.2520833333333333" />
+        <entry key="app/src/main/res/layout/item_todo_element_domain.xml" value="0.27751464843750007" />
+        <entry key="app/src/main/res/layout/item_user.xml" value="0.9523422241210938" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
