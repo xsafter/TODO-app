@@ -4,9 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../.gradle/caches/transforms-3/46711a511d3e1cd7acb3e23e0cab2c15/transformed/material-1.4.0/res/layout/text_view_with_line_height_from_style.xml" value="0.2520833333333333" />
+        <entry key="app/src/main/res/drawable/colored-left-strip.xml" value="0.3285" />
+        <entry key="app/src/main/res/drawable/separator.xml" value="0.28703155517578105" />
+        <entry key="app/src/main/res/drawable/todoelementcorners.xml" value="0.2085" />
+        <entry key="app/src/main/res/layout/activity_auth.xml" value="0.2520833333333333" />
         <entry key="app/src/main/res/layout/activity_item_todo_element_domain.xml" value="0.2520833333333333" />
-        <entry key="app/src/main/res/layout/item_todo_element_domain.xml" value="0.27751464843750007" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2678309122721354" />
+        <entry key="app/src/main/res/layout/activity_note_creation.xml" value="0.2749440511067707" />
+        <entry key="app/src/main/res/layout/item_todo_element.xml" value="0.24768575032552093" />
+        <entry key="app/src/main/res/layout/item_todo_element_domain.xml" value="0.27837066650390624" />
         <entry key="app/src/main/res/layout/item_user.xml" value="0.9523422241210938" />
+        <entry key="app/src/main/res/layout/separator.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/todoelementcorners.xml" value="0.37604166666666666" />
       </map>
     </option>
   </component>

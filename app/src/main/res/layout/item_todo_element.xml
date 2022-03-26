@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    tools:context=".activities.item_todo_element">
+
+    <ImageView
+        android:id="@+id/userAvatar"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="328dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskDescription"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/taskDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/taskName"
+        app:layout_constraintTop_toTopOf="@+id/taskName"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="@tools:sample/date/hhmm" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/taskName"
+        tools:text="@tools:sample/lorem[5]" />
+
+    <TextView
+        android:id="@+id/taskName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/lorem[2]" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toEndOf="@+id/userAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/taskDescription"
+        tools:text="@tools:sample/first_names" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="2dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

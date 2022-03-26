@@ -1,14 +1,16 @@
-package com.example.todo_app;
+package com.example.todo_app.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class item_todo_element_DOMAIN extends AppCompatActivity {
+import com.example.todo_app.R;
+
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.item_todo_element_domain);
+        setContentView(R.layout.activity_main);
     }
 }

@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TODOapp">
         <activity
-            android:name=".ItemUser"
+            android:name=".activities.NoteCreationActivity"
             android:exported="false" />
         <activity
-            android:name=".item_todo_element_DOMAIN"
+            android:name=".activities.item_todo_element"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
