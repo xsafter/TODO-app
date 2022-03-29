@@ -83,7 +83,7 @@ public class AuthActivity extends AppCompatActivity {
                             @Override
                             public void onValue(String value) {
                                 showMessage("User created!");
-                                startChatActivity(value);
+                                startTodoActivity(value);
                             }
                         }
                 ).addOnFailureListener(new OnFailureListener() {
@@ -114,8 +114,8 @@ public class AuthActivity extends AppCompatActivity {
         //TODO
     }
 
-    void startChatActivity(String userKey) {
-        Intent intent = new Intent(this, ChatActivity.class);
+    void startTodoActivity(String userKey) {
+        Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("USER_KEY", userKey);
         startActivity(intent);
     }

@@ -13,7 +13,7 @@
             android:name=".activities.NoteCreationActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.item_todo_element"
+            android:name=".activities.TodoElement"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"

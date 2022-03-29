@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
-    tools:context=".activities.item_todo_element">
+    android:elevation="12dp"
+    tools:context=".activities.TodoElement">
 
     <ImageView
         android:id="@+id/userAvatar"
@@ -14,15 +15,15 @@
         android:layout_marginStart="328dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/taskDescription"
+        app:layout_constraintTop_toBottomOf="@+id/taskTime"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/taskDescription"
+        android:id="@+id/taskTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="@+id/taskDescription"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/taskName"
@@ -31,7 +32,7 @@
         tools:text="@tools:sample/date/hhmm" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/taskDescription"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
@@ -62,15 +63,26 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.815"
         app:layout_constraintStart_toEndOf="@+id/userAvatar"
-        app:layout_constraintTop_toBottomOf="@+id/taskDescription"
+        app:layout_constraintTop_toBottomOf="@+id/taskTime"
         tools:text="@tools:sample/first_names" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxHasDone"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:text="CheckBox"
         tools:layout_editor_absoluteX="2dp"
         tools:layout_editor_absoluteY="8dp" />
+
+    <TextView
+        android:id="@+id/taskPriority"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/userAvatar"
+        app:layout_constraintEnd_toEndOf="@+id/userAvatar"
+        app:layout_constraintStart_toStartOf="@+id/userAvatar"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

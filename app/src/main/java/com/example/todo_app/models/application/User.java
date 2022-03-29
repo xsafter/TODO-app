@@ -1,6 +1,6 @@
 package com.example.todo_app.models.application;
 
-import com.samsung.chatexample.models.domain.UserD;
+import com.example.todo_app.models.domain.UserD;
 
 import java.util.Date;
 
