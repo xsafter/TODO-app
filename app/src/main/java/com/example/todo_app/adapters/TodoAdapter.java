@@ -14,18 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.todo_app.R;
 import com.example.todo_app.models.application.User;
-import com.example.todo_app.models.domain.NoteD;
+import com.example.todo_app.models.domain.Note;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-public class TodoAdapter extends FirebaseRecyclerAdapter<NoteD, TodoAdapter.TodoViewHolder> {
+public class TodoAdapter extends FirebaseRecyclerAdapter<Note, TodoAdapter.TodoViewHolder> {
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
      * {@link FirebaseRecyclerOptions} for configuration options.
      *
      * @param options
      */
-    public TodoAdapter(@NonNull FirebaseRecyclerOptions<NoteD> options) {
+    public TodoAdapter(@NonNull FirebaseRecyclerOptions<Note> options) {
         super(options);
     }
 
@@ -33,7 +33,7 @@ public class TodoAdapter extends FirebaseRecyclerAdapter<NoteD, TodoAdapter.Todo
     @Override
     public TodoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         int layout = R.layout.item_todo_element;
-        View view = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_todo_element, parent, false);
         return new TodoViewHolder(view);
     }
 
@@ -61,13 +61,12 @@ public class TodoAdapter extends FirebaseRecyclerAdapter<NoteD, TodoAdapter.Todo
             lowButton = itemView.findViewById(R.id.lowButton);
             createButton = itemView.findViewById(R.id.createButton);
         }
-        public void bind(NoteD noteD, User user){
+        public void bind(Note noteD, User user){
 
         }
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull TodoAdapter.TodoViewHolder holder, int position, @NonNull NoteD model) {
-
+    protected void onBindViewHolder(@NonNull TodoAdapter.TodoViewHolder holder, int position, @NonNull Note model) {
     }
 }

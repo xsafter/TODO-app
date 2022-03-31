@@ -12,12 +12,16 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.todo_app.R;
+import com.example.todo_app.models.application.User;
+import com.example.todo_app.models.domain.Note;
+import com.example.todo_app.models.domain.UserD;
+import com.example.todo_app.services.DatabaseService;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 
-import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
+import java.util.UUID;
 
 public class NoteCreationActivity extends AppCompatActivity {
     ImageButton goBackButton;
@@ -43,21 +47,25 @@ public class NoteCreationActivity extends AppCompatActivity {
             }
         });
 
-        String name; String description; Date date = new Date(); String importance;
-        name = editNoteName.getText().toString(); description = editNoteDescription.getText().toString();
-        noteName.setText(name);
+        createButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name; String description; Date date = new Date(); String importance = "";
+                name = editNoteName.getText().toString(); description = editNoteDescription.getText().toString();
+                noteName.setText(name);
+                SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy hh:mm");
+                noteTime.setText(sdf.format(date));
 
-//        Calendar calendar = Calendar.getInstance();
-//        calendar.setTime(date);
-//        String dateBuf;
-//        dateBuf = calendar.get(Calendar.DAY_OF_MONTH) + calendar.get(Calendar.MONTH) + "\"" + calendar.get(Calendar.YEAR).substring(2, 3)
-//                + "\n" + calendar.get(Calendar.HOUR);
-//        noteTime.setText(date.toString());
+                if (lowButton.isChecked()) importance = "low";
+                if (mediumButton.isChecked()) importance = "medium";
+                if (highButton.isChecked()) importance = "high";
 
-        if (lowButton.isChecked()) importance = "low";
-        if (mediumButton.isChecked()) importance = "medium";
-        if (highButton.isChecked()) importance = "high";
-
+                User user = new User(new UserD("zxczxc", date.getDate()));
+                Note note = new Note(name, description, date.getDate(), importance, user, false);
+                DatabaseService.addNote(note);
+                startActivity(new Intent(NoteCreationActivity.this, MainActivity.class));
+            }
+        });
     }
     private void initView(){
         goBackButton = findViewById(R.id.goBackButton);

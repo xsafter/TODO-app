@@ -4,30 +4,33 @@ import androidx.annotation.NonNull;
 
 import com.example.todo_app.models.application.User;
 
-public class NoteD {
+public class Note {
     public String name;
     public String description;
     public long creationDate;
     public String priority;
     public User user;
-    public NoteD(){}
+    public boolean done;
+    public Note(){}
 
-    public NoteD(String name, String description, long creationDate, String priority, User user) {
+    public Note(String name, String description, long creationDate, String priority, User user, boolean done) {
         this.name = name;
         this.description = description;
         this.creationDate = creationDate;
         this.priority = priority;
         this.user = user;
+        this.done = done;
     }
 
     @Override
     public String toString() {
-        return "NoteD{" +
+        return "Note{" +
                 "name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", creationDate=" + creationDate +
                 ", priority='" + priority + '\'' +
                 ", user=" + user +
+                ", done=" + done +
                 '}';
     }
 }

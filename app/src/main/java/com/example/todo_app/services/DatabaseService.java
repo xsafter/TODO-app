@@ -2,8 +2,7 @@ package com.example.todo_app.services;
 
 import androidx.annotation.NonNull;
 
-import com.example.todo_app.models.application.Note;
-import com.example.todo_app.models.domain.NoteD;
+import com.example.todo_app.models.domain.Note;
 import com.firebase.ui.database.ClassSnapshotParser;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DataSnapshot;
@@ -47,7 +46,7 @@ public class DatabaseService {
                     return;
                 }
 
-                User user = new User(userD, snapshot.getKey());
+                User user = new User(userD);
                 listener.onValue(user);
             }
 
@@ -65,7 +64,7 @@ public class DatabaseService {
                 ArrayList<User> users = new ArrayList<>();
                 for (DataSnapshot child : snapshot.getChildren()) {
                     UserD userD = child.getValue(UserD.class);
-                    users.add(new User(userD, child.getKey()));
+                    users.add(new User(userD));
                 }
 
                 listener.onValue(users);
@@ -78,7 +77,7 @@ public class DatabaseService {
     }
 
     public static FirebaseRecyclerOptions<String> getUsersOptions(User user) {
-        Query query = usersRef().child(user.id).child("chats");
+        Query query = usersRef().child("chats");
         ClassSnapshotParser<String> parser = new ClassSnapshotParser<>(String.class);
 
         return new FirebaseRecyclerOptions.Builder<String>()
@@ -92,18 +91,16 @@ public class DatabaseService {
         return ref.getKey();
     }
 
-    public static void getNote(String id, MyValueEventListener<User> listener){
+    public static void getNote(String id, MyValueEventListener<Note> listener){
         notesRef().child(id).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                NoteD noteD = snapshot.getValue(NoteD.class);
-                if (noteD == null) {
+                Note note = snapshot.getValue(Note.class);
+                if (note == null) {
                     listener.onException(new NullPointerException("Snapshot is null"));
                     return;
                 }
-
-                Note note = new Note(noteD, snapshot.getKey());
-//                listener.onValue(note);
+                listener.onValue(note);
             }
 
             @Override
@@ -119,8 +116,7 @@ public class DatabaseService {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 ArrayList<Note> notes = new ArrayList<>();
                 for (DataSnapshot child : snapshot.getChildren()) {
-                    NoteD noteD = child.getValue(NoteD.class);
-                    notes.add(new Note(noteD, child.getKey()));
+                    notes.add(child.getValue(Note.class));
                 }
 
                 listener.onValue(notes);
@@ -130,5 +126,14 @@ public class DatabaseService {
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+
+    public static FirebaseRecyclerOptions<Note> getNoteOptions() {
+        Query query = FirebaseDatabase.getInstance().getReference("notes");
+        ClassSnapshotParser<Note> parser = new ClassSnapshotParser<>(Note.class);
+
+        return new FirebaseRecyclerOptions.Builder<Note>()
+                .setQuery(query, parser)
+                .build();
     }
 }
